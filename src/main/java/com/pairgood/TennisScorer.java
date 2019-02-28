@@ -14,8 +14,8 @@ public class TennisScorer {
         return serverScore;
     }
 
-    public int getReceiverScore() {
-        return receiverScore;
+    public String getReceiverScore() {
+        return Integer.toString(receiverScore);
     }
 
     public void serverWon() {
