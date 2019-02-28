@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TennisScorerTest {
 
     @Test
-    public void serverWins_WhenZeroZero_WhenServerWinsPoint_ThenScoreIsFifteenZero() {
+    public void serverWon_GivenZeroZero_WhenServerWinsPoint_ThenScoreIsFifteenZero() {
         TennisScorer scorer = new TennisScorer(0,0);
 
         Assert.assertEquals(0, scorer.getServerScore());
@@ -19,7 +19,7 @@ public class TennisScorerTest {
     }
 
     @Test
-    public void receiverWins_WhenFifteenFifteen_WhenReceiverWinsPoint_ThenScoreIsFifteenThirty() {
+    public void receiverWon_GivenFifteenFifteen_WhenReceiverWinsPoint_ThenScoreIsFifteenThirty() {
         TennisScorer scorer = new TennisScorer(15, 15);
 
         Assert.assertEquals(15, scorer.getServerScore());
@@ -31,4 +31,16 @@ public class TennisScorerTest {
         Assert.assertEquals(30, scorer.getReceiverScore());
     }
 
+    @Test
+    public void serverWon_GivenThirtyThirty_WhenServerWinsPoint_ThenScoreIsFortyThirty(){
+        TennisScorer scorer = new TennisScorer(30, 30);
+
+        Assert.assertEquals(30, scorer.getServerScore());
+        Assert.assertEquals(30, scorer.getReceiverScore());
+
+        scorer.serverWon();
+
+        Assert.assertEquals(40, scorer.getServerScore());
+        Assert.assertEquals(30, scorer.getReceiverScore());
+    }
 }
