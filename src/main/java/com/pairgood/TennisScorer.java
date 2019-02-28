@@ -15,6 +15,9 @@ public class TennisScorer {
     }
 
     public String getReceiverScore() {
+        if (receiverScore > 40) {
+            return "A";
+        }
         return Integer.toString(receiverScore);
     }
 
