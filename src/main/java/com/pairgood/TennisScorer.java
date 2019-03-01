@@ -18,6 +18,7 @@ public class TennisScorer {
             return "A";
         else
             return Integer.toString(serverScore);
+
     }
 
     public String getReceiverScore() {
